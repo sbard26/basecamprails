@@ -1,5 +1,4 @@
 Basecamp::Application.routes.draw do
-  get "users/new"
 
   root to: "static_pages#home"
 
@@ -12,7 +11,6 @@ Basecamp::Application.routes.draw do
   match '/signup', to: 'users#new'
 
   resources :articles
-
 
   resources :users
 
