@@ -8,19 +8,25 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-  	<%= render 'layouts/header' %>
-    <div class = "span3">
-    <%= render 'layouts/sidebar'%>
-    </div>
     <div class="container-fluid">
+  	<%= render 'layouts/header' %>
+      <div class = "span3">
+        <%= render 'layouts/sidebar'%>
+      </div>
+    
     <div class="span12">
+    <div class="hero-unit">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>  
       <% end %>
       <%= yield %>
+    </div>
+    </div>
+    </div>
+
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
-    </div>
+   
     </div>
   </body>
 </html>
