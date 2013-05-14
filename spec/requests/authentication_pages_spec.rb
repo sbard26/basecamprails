@@ -65,6 +65,18 @@ describe "authorization" do
       it "should render the desired protected page" do
         page.should have_selector('title', text: 'Edit user')
       end
+     describe "in the Microposts controller" do
+        
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
     end
   end
 
