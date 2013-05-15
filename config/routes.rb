@@ -1,4 +1,9 @@
 Basecamp::Application.routes.draw do
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   root to: "static_pages#home"
 
@@ -17,14 +22,13 @@ Basecamp::Application.routes.draw do
   match '/edit', to: "layouts#edit"
  
   
-
-  resources :articles
-
-  resources :users
+ 
   
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :microposts, only: [:create, :destroy]
+
+  resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
