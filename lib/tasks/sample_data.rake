@@ -1,6 +1,10 @@
 namespace :db do
   desc "Fill database with sample data"
-  task :populate => :environment do
+  task populate: :environment do
+    admin = User.create!(name: "Example User",
+			email: "example@railstutorial.org",
+			password: "foobar",
+			password_confirmation: "foobar")
     Rake::Task['db:reset'].invoke
     make_users
     make_microposts
