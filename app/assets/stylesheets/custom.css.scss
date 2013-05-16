@@ -147,10 +147,10 @@ footer {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 2px solid #bbb;
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   @include box_sizing;
 }
 
@@ -190,7 +190,7 @@ input {
 }
 .gravatar {
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 aside {
   textarea {
