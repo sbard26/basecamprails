@@ -1,6 +1,4 @@
 Basecamp::Application.routes.draw do
-  get "company/new"
-
   resources :users do
     member do
       get :following, :followers
