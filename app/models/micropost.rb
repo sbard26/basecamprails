@@ -1,10 +1,15 @@
 class Micropost < ActiveRecord::Base
   attr_accessible :content
   belongs_to :user
+  has_one :article
+  has_many :microposts
+  has_one :event
+  has_one :timestamp
+  has_many :tags
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
-
+  
   default_scope order: 'microposts.created_at DESC'
 
   def self.from_users_followed_by(user)

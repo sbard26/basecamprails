@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Content:</b>
-  <%= @article.content %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @article.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% provide(:title, 'Article') %>
+<div class="row-fluid">
+    <div class="span3">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </div>
+    <div class="span9">
+      <h1><%= @article.title %></h1>
+      <p><strong>Author: </strong> $<%= @article.author %><br />
+         <strong>Content :</strong> <%= @article.content %><br />
+      </p>
+<%= link_to 'Back', {:action => 'list'} %></div>

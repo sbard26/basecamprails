@@ -1,7 +1,7 @@
 <% provide(:title, 'Home') %>
 <% if signed_in? %>
 <div class="row-fluid">
-    <div class="span4">
+    <div class="span3">
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -12,9 +12,18 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </div>
-    <div class="span8">
-      <h3> Article Feed</h3>
+    <div class="span3">
+      <section>
+        <%= render 'shared/article_form' %>
+      </section>
+    </div>
+    <div class="span3">
+      <h3> Micropost Feed</h3>
       <%= render 'shared/feed' %>
+    </div>
+    <div class="span3">
+      <h3> Article Feed</h3>
+      <%= render 'shared/afeed' %>
     </div>
   </div>  
 <% else %>

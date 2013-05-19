@@ -11,13 +11,22 @@
 			<%= render 'shared/stats' %>
 		</section>
 	</aside>
-	<div class = "span8">
+	<div class = "span4">
 	  <% if @user.microposts.any? %>
-	    <h3>Microposts (<%= @user.microposts.count %>)</h3>
+	    <h3>Posts (<%= @user.microposts.count %>)</h3>
 	    <ol class = "microposts">
 	      <%= render @microposts %>
 	    </ol>
 	    <%= will_paginate @microposts %>
-	  <%  end %>
+	  <% end %>
+	</div>
+	<div class = "span4">
+	  <% if @user.articles.any? %>
+	    <h3>Articles (<%= @user.articles.count %>)</h3>
+	    <ol class = "articles">
+	      <%= render @articles %>
+	    </ol>
+	    <%= will_paginate @articles %>
+	  <% end %>
 	</div>
 </div>

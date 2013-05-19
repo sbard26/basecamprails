@@ -3,9 +3,7 @@ class UsersController < ApplicationController
 	before_filter :signed_in_user, 
 		      only: [:index, :edit, :update, :destroy, :following, :followers]
 	before_filter :correct_user, only: [:edit, :update]
-	def show
-		@user = User.find(params[:id])
-	end
+
 
 	def new
 	    @user = User.new
@@ -40,7 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-	  User.find(params[:id].destroy
+	  User.find(params[:id].destroy)
 	  flash[:success] = "User destroyed."
 	  redirect_to users_url
 	end
@@ -62,6 +60,7 @@ class UsersController < ApplicationController
 	def show
 	  @user = User.find(params[:id])
 	  @microposts = @user.microposts.paginate(page: params[:page])
+	  @articles = @user.articles.paginate(page: params[:page])
 	end
 	private
 		def signed_in_user

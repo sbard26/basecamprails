@@ -21,12 +21,14 @@ Basecamp::Application.routes.draw do
 
   match '/edit', to: "layouts#edit"
  
-  
+  get '/articles/:id', to: 'articles#show', as:'article'
  
+  
+  resources :articles, only: [:destroy, :create, :show]
   
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy, :show]
 
   resources :relationships, only: [:create, :destroy]
 
