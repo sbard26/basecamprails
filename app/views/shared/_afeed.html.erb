@@ -1,0 +1,5 @@
+
+  <ol class="articles">
+    <%= render partial: 'shared/afeed_item', collection: @afeed_items %>
+  </ol>
+  <%= will_paginate @afeed_items %>
