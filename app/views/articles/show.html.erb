@@ -7,13 +7,10 @@
       <section>
         <%= render 'shared/stats' %>
       </section>
-      <section>
-        <%= render 'shared/micropost_form' %>
-      </section>
     </div>
     <div class="span9">
-      <h1><%= @article.title %></h1>
-      <p><strong>Author: </strong> $<%= @article.author %><br />
-         <strong>Content :</strong> <%= @article.content %><br />
+      <h1><%= Article.read_attribute(object_id).title %></h1>
+      <p><strong>Author: </strong> <%= Article.find(object_id).author %><br />
+         <strong>Content: </strong> <%= Article.find(object_id).content %><br />
       </p>
-<%= link_to 'Back', {:action => 'list'} %></div>
+</div>

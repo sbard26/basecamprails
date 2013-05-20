@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article created!"
       redirect_to root_url
     else
-      @feed_items = []
+      @feed_items= []
       render 'static_pages/home'
     end
   end
@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
     redirect_to root_url
   end

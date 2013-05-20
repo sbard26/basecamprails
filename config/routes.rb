@@ -20,11 +20,9 @@ Basecamp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: :delete
 
   match '/edit', to: "layouts#edit"
- 
-  get '/articles/:id', to: 'articles#show', as:'article'
- 
   
-  resources :articles, only: [:destroy, :create, :show]
+  
+  resources :articles, only: [:create, :destroy, :show]
   
   resources :sessions, only: [:new, :create, :destroy]
 
