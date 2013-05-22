@@ -22,7 +22,7 @@ Basecamp::Application.routes.draw do
   match '/edit', to: "layouts#edit"
 
   resources :articles do
-    resources :comments
+    resources :microposts
   end
 
   resources :comments, only: [:create, :destroy, :show]  

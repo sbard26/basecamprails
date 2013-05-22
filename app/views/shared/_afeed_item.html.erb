@@ -8,14 +8,35 @@
 <!-- Modal -->  
 <a href="#myModal" role="button" class="btn" data-toggle="modal">Full Article</a>
   <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="span5">
   <div class="modal-header">
     <h3 id="myModalLabel"><%= afeed_item.title %></h3>
   </div>
+  </div>
+  <div class="span5">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Comment Feed </h3>
+  </div>
+  </div>
+  <div class="span5">
   <div class="modal-header">
     <h3 id="myModalLabel"><%= afeed_item.author %></h3>
   </div>
+  </div>
+  <div class="span5">
+  <div class="modal-header">
+    <%= render 'shared/feed' %>
+  </div>
+  </div>
+  <div class="span5">
   <div class="modal-body">
     <p><%= afeed_item.content %></p>
+  </div>
+  </div>
+  <div class="span5">
+  <div class="modal-body">
+    <%= render 'shared/micropost_form' %>
+  </div>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

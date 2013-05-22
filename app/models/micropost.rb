@@ -2,7 +2,6 @@ class Micropost < ActiveRecord::Base
   attr_accessible :content
   belongs_to :user
   has_one :article
-  has_many :microposts
   has_one :event
   has_one :timestamp
   has_many :tags

@@ -10,7 +10,7 @@ class MicropostsController < ApplicationController
   end
   
   def create
-   @micropost = current_user.microposts.build(params[:micropost])
+   @micropost = current_user.articles.microposts.build(params[:micropost])
    if @micropost.save
      flash[:success] = "Comment posted!"
      redirect_to root_url
