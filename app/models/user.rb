@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	has_many :microposts, dependent: :destroy
 	has_many :articles, dependent: :destroy
+	has_many :comments, dependent: :destroy
 	has_many :groups, dependent: :destroy
 	has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 	has_many :followed_users, through: :relationships, source: :followed
@@ -40,6 +41,8 @@ class User < ActiveRecord::Base
 	def afeed
 		articles
 	end
+
+	
 	
 	def following?(other_user)
 	  relationships.find_by_followed_id(other_user.id)

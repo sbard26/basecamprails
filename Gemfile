@@ -13,6 +13,7 @@ gem "gravatar-ultimate", "~> 1.0.3"
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
+  gem 'sqlite3', '1.3.5'
   # gem 'guard-rspec', '1.2.1'
   # gem 'guard-spork', '1.2.0'
   # gem 'childprocess', '0.3.6'
